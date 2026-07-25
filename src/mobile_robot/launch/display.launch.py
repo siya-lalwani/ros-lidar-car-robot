@@ -1,29 +1,32 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.substitutions import Command, FindExecutable
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch_ros.substitutions import FindPackageShare
 import os
 
 def generate_launch_description():
-    pkg_path = get_package_share_directory('mobile_robot')
-    xacro_file = os.path.join(pkg_path,'model','mobile_robot.xacro')
-    robot_description = ParameterValue(
-        Command([FindExecutable(name="xacro")," ",xacro_file]),
-        value_type=str
-    )
-    return LaunchDescription([
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{'robot_description':robot_description}]
-        ),
-        Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui'
-        ),
-        Node(
-            package='rviz2',
-            executable='rviz2'
+    ld = LaunchDescription()
+    ld.add_action(
+        DeclareLaunchArgument(
+            "model",
+            default_value="model/mobile_robot.xacro"
         )
-    ])
+    )
+    ld.add_action(
+        IncludeLaunchDescription(
+            PathJoinSubstitution([
+                FindPackageShare("urdf_launch"),
+                "launch",
+                "display.launch.py"
+            ]),
+            launch_arguments={
+                "urdf_package":"mobile_robot",
+                "urdf_package_path":LaunchConfiguration("model"),
+                "jsp_gui":"true"
+            }.items()
+        )
+    )
+    return ld
