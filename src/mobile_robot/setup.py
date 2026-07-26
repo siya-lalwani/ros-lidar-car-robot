@@ -15,6 +15,8 @@ setup(
          glob('launch/*.py')),
         (os.path.join('share',package_name,'model'),
                  glob('model/*')),
+        (os.path.join('share',package_name,'parameters'),
+                         glob('parameters/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

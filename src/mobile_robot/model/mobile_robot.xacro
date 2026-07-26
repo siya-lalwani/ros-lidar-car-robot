@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="https://www.ros.org/wiki/xacro" name="mobile_robot">
+    <!-- 
     <xacro:include filename="$(find mobile_robot)/model/mobile_robot.gazebo" />
+    -->
     <link name="base_link">
         <visual>
             <geometry>
