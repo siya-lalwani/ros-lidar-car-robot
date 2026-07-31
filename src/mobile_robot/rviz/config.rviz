@@ -1,0 +1,238 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /RobotModel1
+        - /TF1
+        - /LaserScan1
+      Splitter Ratio: 0.5
+    Tree Height: 775
+  - Class: rviz_common/Selection
+    Name: Selection
+  - Class: rviz_common/Tool Properties
+    Expanded:
+      - /2D Goal Pose1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz_common/Time
+    Expanded: []
+    Name: Time
+    SyncMode: 0
+    SyncSource: LaserScan
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_common/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz_common/RobotModel
+      Collision Margin: 0.009999999776482582
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expanded:
+          - base_link
+          - left_wheel
+          - right_wheel
+          - lidar_link
+        Link 'base_link':
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link 'left_wheel':
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link 'lidar_link':
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link 'right_wheel':
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Prims:
+        Axes Length: 0.30000001192092896
+        Axes Radius: 0.009999999776482582
+        Sphere Radius: 0.20000000298023224
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_common/TF
+      Enabled: true
+      Filter (exclude):
+        packages:
+          - {}
+      Filter (include):
+        packages:
+          - all
+      Frame Limit: 256
+      Frames:
+        All Enabled: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_common/LaserScan
+      Color: 255; 255; 0
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 5
+      Size (m): 0.05000000074505806
+      Style: Flat Squares
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz_common/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Unreliable: false
+      Use Timestamp: false
+      Value: false
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: odom
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_common/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_common/MoveCamera
+    - Class: rviz_common/Select
+    - Class: rviz_common/FocusCamera
+    - Class: rviz_common/Measure
+      Class Name: rviz_common/Measure
+    - Class: rviz_common/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic:
+        Name: /initialpose
+        Unreliable: false
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz_common/SetGoal
+      Topic:
+        Name: /goal_pose
+        Unreliable: false
+    - Class: rviz_common/PublishPoint
+      Single click publishing: true
+      Topic:
+        Name: /clicked_point
+        Unreliable: false
+  Transformation:
+    Current:
+      Class: rviz_common/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_common/Orbit
+      Distance: 2
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.6203822493553161
+      Target Frame: base_link
+      Value: Orbit (rviz)
+      Yaw: 0.5585053563117981
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1056
+  Help:
+    collapsed: false
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: true
+  Views:
+    collapsed: false
+  Width: 1728
+  X: 0
+  Y: 0
